@@ -1,6 +1,5 @@
-"""
-I am aware that this code contains a lot of stupid ways of doing stuff but I am too lazy to change it now ¯\_(ツ)_/¯
-"""
+# I am aware that this code contains a lot of stupid ways of doing stuff
+# but I am too lazy to change it now ¯\_(ツ)_/¯
 
 def print_game(game):
     """Print the current instance of the Board"""
