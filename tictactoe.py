@@ -3,9 +3,11 @@
 
 def print_game(game):
     """Print the current instance of the Board"""
+    print('\n')
     print(game[0],game[1],game[2])
     print(game[3],game[4],game[5])
     print(game[6],game[7],game[8])
+    print('\n')
 
 def check_status(game):
     """Checks if a player won
@@ -51,9 +53,9 @@ def play_a_new_game():
             '.','.','.',
             '.','.','.']
 
-    print('New Game: \n')
+    print('New Game: ')
     print_game(game)
-    print('\n')
+    #print('\n')
 
     #iterator for the game loop
     i = 0
@@ -64,6 +66,7 @@ def play_a_new_game():
 
     #keeps track remainging allowed moves
     valid_moves = [0,1,2,3,4,5,6,7,8]
+    curr_moves = [1,2,3,4,5,6,7,8,9]
 
     go = True
 
@@ -74,6 +77,7 @@ def play_a_new_game():
 
             #Loop to take input from the player
             while go:
+                print('List of valid moves: ',curr_moves)
                 position = int(input('Pick a valid position to place X: '))
                 position -= 1
                 if (position < 0 or position > 8):
@@ -82,6 +86,7 @@ def play_a_new_game():
                 if (position in valid_moves):
                     go = False
                     #ind = valid_moves.index(position)
+                    del curr_moves[valid_moves.index(position)]
                     del valid_moves[valid_moves.index(position)]
                 else:
                     print('Invalid Position!')
@@ -111,6 +116,7 @@ def play_a_new_game():
 
             #Loop to take input from the player
             while go:
+                print('List of valid moves: ',curr_moves)
                 position = int(input('Pick a valid position to place O: '))
                 position -= 1
                 if (position < 0 or position > 8):
@@ -119,6 +125,7 @@ def play_a_new_game():
                 if (position in valid_moves):
                     go = False
                     #ind = valid_moves.index(position)
+                    del curr_moves[valid_moves.index(position)]
                     del valid_moves[valid_moves.index(position)]
                 else:
                     print('Invalid Position!')
@@ -143,9 +150,13 @@ def play_a_new_game():
             if (i == 9):
                 break
 
-        print('\n')
+        #print('\n')
 
     print("DRAW!")
 
 if __name__ == "__main__":
-    play_a_new_game()
+    while True:
+        play_a_new_game()
+        again = input('Would you like to play again? [Y/N]: ')
+        if again == 'N' or again == 'n':
+            break
