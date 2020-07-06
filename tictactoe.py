@@ -29,13 +29,13 @@ def check_status(game):
 
     #Diagonal Condtions
     if (game[0] == game[4] and game[0] == game[8]):
-        if (game[i] == '.'):
-                return (-1)
+        if (game[0] == '.'):
+            return (-1)
         return 0
 
     if (game[2] == game[4] and game[2] == game[6]):
-        if (game[i] == '.'):
-                return (-1)
+        if (game[2] == '.'):
+            return (-1)
         return 2
 
     return (-1)
