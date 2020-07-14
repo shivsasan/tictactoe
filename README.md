@@ -1,8 +1,7 @@
 # Tictactoe
 
-Tic-Tac-Toe playing program where a human can play against the computer, and the computer makes all its moves using random playouts. Also, twoplayer mode
+Tic-Tac-Toe playing program where a human can play against the computer, and the computer makes all its moves using random playouts.
 
-## Upcoming
+## Upcoming (Maybe)
 
-* Single player
 * GUI for both modes
